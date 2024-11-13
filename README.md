@@ -61,3 +61,23 @@ pip install alembic (para migraciones)
 ```bash
 python -m pip freeze > requirements.txt 
 ```
+
+7) ejecutar pruebas unitarias con pytest:
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1 && pytest
+```
+
+7) generar covertura y reporte de cobertura:
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1 && coverage run -m pytest
+```
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1 && coverage report
+```
+
+```bash
+export PYTHONDONTWRITEBYTECODE=1 && coverage html
+```
