@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.cache/
+.coverage
+htmlcov/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Logs y archivos temporales
+*.log
+*.swp
+*~
+
+# IDE (por ejemplo, Visual Studio Code)
+.vscode/
+
+# Archivo de base de datos SQLite
+*.db
+*.sql
+
+# Ambiente de desarrollo
+.env
