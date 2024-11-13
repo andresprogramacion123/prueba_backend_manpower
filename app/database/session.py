@@ -3,7 +3,7 @@ from sqlalchemy import Engine
 from tenacity import after_log, before_log, retry, stop_after_attempt, wait_fixed
 import logging
 #Importamos todos los modelos, en caso de que no se ejecuten migraciones
-from app.models import hero_model
+from app.models import hero_model, autor_model, libro_model
 from app.config.config import settings
 
 #Motor(Engine) de base de datos: maneja la comunicacion con la base de datos, normalmente solo se tiene un engine para toda la aplicacion y reutilizarlo en todas partes.
