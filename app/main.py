@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from app.utils.exceptions import AppExceptionCase
-
+from app.routers import autor, libro
 app = FastAPI()
 
 # Controlador de excepciones
@@ -21,3 +21,6 @@ async def custom_app_exception_handler(request, e):
 @app.get("/")
 def read_root():
     return {"Hola": "Mundito"}
+
+app.include_router(autor.router)
+app.include_router(libro.router)

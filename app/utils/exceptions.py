@@ -46,3 +46,21 @@ class AppException:
             status_code = 500
             AppExceptionCase.__init__(self, status_code, context)
 #######################################################################################
+
+    class CreateAutor(AppExceptionCase):
+        
+        def __init__(self, context: dict = None):
+            """
+            Fallo creacion de autor
+            """
+            status_code = 500
+            AppExceptionCase.__init__(self, status_code, context)
+
+    class ReadAutor(AppExceptionCase):
+        
+        def __init__(self, context: dict = None):
+            """
+            Fallo lectura de autor
+            """
+            status_code = 500
+            AppExceptionCase.__init__(self, status_code, context)

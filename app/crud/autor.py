@@ -39,33 +39,3 @@ class AutorCRUD(AppCRUD):
       return autor
 #################################################################################################
      
-   #Mostrar todos los autores, con todas las columnas (Read all)
-#################################################################################################
-   def autores_leer(self) -> Autor:
-      autores = self.session.exec(select(Autor)).all()
-      return autores
-#################################################################################################
-   
-   #Mostrar todos los autores, pero teniendo en cuenta el offset y limit como parametros de query
-#################################################################################################
-   def autores_leer_ol(self, offset: int, limit: int) -> Autor:
-      autores = self.session.exec(select(Autor).offset(offset).limit(limit)).all()
-      return autores
-#################################################################################################
-
-   #Eliminar un autor (Delete)
-#################################################################################################
-   def eliminar_autor_by_id(self, autor: Autor) -> dict: 
-      self.session.delete(autor)
-      self.session.commit()
-      return {"autor eliminado con exito": autor.nombre}
-#################################################################################################
-   
-   #Actualizar algun campo para un autor por su id (Update)
-#################################################################################################
-   def update_autor_by_id(self, db_autor: Autor) -> Optional[Autor]:
-      self.session.add(db_autor)
-      self.session.commit()
-      self.session.refresh(db_autor)
-      return db_autor
-#################################################################################################
