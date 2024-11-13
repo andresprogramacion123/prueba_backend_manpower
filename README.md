@@ -1,66 +1,54 @@
-# Proyecto template 2024. 
+# Prueba técnica desarrollador backend python 
 
-**Desarrollado por Julian Andres Montoya Carvajal (julianmontoya3.1416@gmail.com)**
+**Julian Andres Montoya Carvajal C.C 1214727927**
 
-Esta es proyecto plantilla utilizando el framework FastAPI 💪 y el ORM SQLModel 💪💪
+## Parte 1: Instrucciones de instalacion y ejecucion
 
-Para conocer la documentacion del framework visite https://fastapi.tiangolo.com/ y https://sqlmodel.tiangolo.com/
+* Preferiblemente tener instalado Ubuntu 22.04.3 LTS (Jammy) (Windows tambien se puede pero debe poder instalar docker y docker compose).
 
-## Iniciar proyecto de desarrollo local desde cero
+* Asegurate de instalar Docker version 24.0.7 y ademas Docker Compose version 2.21.0. El siguiente link te puede ayudar a obtener los dos https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
 
-1) 
-
-a) Instalar Ubuntu (particionando el disco):
-
-    Preferiblemente tener instalado Ubuntu 22.04.3 LTS (Jammy) 
-    (Falta documentación)
-
-b) Instalar ubuntu en windows con wsl:
-    
-    (Falta documentación)
-
-2) Instalar python (Superior a 3.10):
-
-Preferiblemente tener instalado Python version 3.10.12
-(Falta documentación)
-
-3) Instalar pip (administrador de paquetes):
-
-(Falta documentación)
-
-4) Establecer entorno virtual:
-
-(Falta documentación)
+* Clone el repositorio con los siguientes comandos (debe tener instalado git)
 
 ```bash
-virtualenv env --python=python3
+git clone https://github.com/andresprogramacion123/prueba_backend_manpower.git
 ```
 
-5) Activa el entorno virtual en linux:
+* Ingresa a la carpeta donde esta el proyecto
 
 ```bash
-source env/bin/activate
+cd andresprogramacion123/prueba_backend_manpower
 ```
 
-6) Instalar dependencias y asignarlas en requirements.txt
+* Crea el archivo .env con las variables de entorno correspondientes, para tener un ejemplo puede ver el archivo adjunto en el proyecto llamado .env_example
 
-```bash
-pip install fastapi
-pip install sqlmodel
-pip install psycopg2-binary (controlador para db postgresql)
-pip install tenacity (para conexion con db)
-pip install pydantic-settings (para variables de entorno)
-pip install "passlib[bcrypt]" (para la seguridad)
-pip install "python-jose[cryptography]" (para la seguridad)
-pip install emails (para envio de emails)
-pip install weasyprint (para generacion de pdfs)
-pip install pytest (para pruebas unitarias)
-pip install alembic (para migraciones)
-```
+* Posteriomente ejecute el archivo docker-compose.yml para ejecutar el proyecto
 
 ```bash
-python -m pip freeze > requirements.txt 
+sudo docker compose up --build
 ```
+
+* Visita http://localhost:5000/ en tu navegador para acceder a la aplicacion
+
+* Visita http://localhost:5000/docs en tu navegador para acceder a la documentación interactiva de la API generada automáticamente por FastAPI.
+
+* Visita http://localhost:5050/ en tu navegador para acceder a la interfaz grafica de la base de datos postgresql.
+
+**Nota:** En caso de tener problemas con puertos ya utilizados, ejecutar comando siguiente para conocer el ID del contenedor
+
+```bash
+sudo docker ps
+```
+
+Luego detener el contenedor con el siguiente comando
+
+```bash
+sudo docker stop ID_CONTENEDOR
+```
+
+## Parte 2: Estructura del proyecto y esquema relacional
+
+## Parte 3: Preguntas adicionales
 
 7) ejecutar pruebas unitarias con pytest:
 

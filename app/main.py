@@ -18,9 +18,9 @@ async def app_exception_handler(
 async def custom_app_exception_handler(request, e):
     return await app_exception_handler(request, e)
 
-@app.get("/")
+@app.get("/", tags=["Bienvenida"])
 def read_root():
-    return {"Hola": "Mundito"}
+    return {"Hola": "Bienvenid@s a la API para gestionar la pequeña biblioteca"}
 
 app.include_router(autor.router)
 app.include_router(libro.router)
