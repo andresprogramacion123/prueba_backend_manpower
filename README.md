@@ -117,6 +117,44 @@ export PYTHONDONTWRITEBYTECODE=1 && coverage report
 
 ![Esquemna de datos](esquema_datos.png)
 
+### Flujo de backend 
+
+1) schemas: Construimos schemas pydantic con las validaciones respectivas para cada campo. 
+    * Establecemos tipos de campos (str, int, float, date o datetime, bool, categorico, email, dict, JSON, etc..)
+    * Establecemos si los campos son Obligatorios u Opcionales
+    * Establecemos si el campo es unico o no
+    * Establecemos el esquema base (Base), 
+    * El esquema para base de datos si es necesario (InDB)
+    * El esquema para crear o registrar (Created)
+    * El esquema para leer (Read)
+    * El esquema para leer con relaciones de otros modelos si es necesariio (ReadWith)
+    * El esquema para actualizar un registro si es necesario (Updated).
+
+2) models: Construimos modelo de base de datos. 
+    * Establecemos el modelo (Tabla) que se creara en la base de datos.
+    * Inicialmente para verificar que se cree bien lo creamos sin claves foraneas, sin atributos relationship y sin restricciones
+    * Posteriormemente cuando verificamos que se creo bien establecemos relaciones de claves foraneas, atributos de relationship y restricciones si es necesario.
+
+3) database: Importamos en modelo de base de datos en el modulo database.session
+
+4) crud: Establecemos las funciones del crud para crear, leer, actualizar y eliminar un registro
+
+5) utils/exceptions: Establecemos las excepciones en los servicios.
+
+6) services: Construimos los servicios con su logica determinada y excepciones
+
+7) routers: Establecemos los endpoints
+
+8) main: Importamos en router
+
+El desarrollo anterior tiene una arquitectura de tres capas
+
+1) Capa de controladores o routers (endpoints): Se encuentra en app/routers/ modifique o agregue los endpoints que desea
+
+2) Capa de servicios o logica del negocio: Se encuentra en app/services/ modifique o agregue los servicios y la logica que desea 
+
+3) Capa de acceso a datos y operaciones crud: Se encuentra en app/crud/ modifique o agregue las operaciones crud y las consultas segun su necesidad
+
 ## Parte 3: Preguntas adicionales
 
 * ¿Cómo manejarías la autenticación y autorización en la API?
