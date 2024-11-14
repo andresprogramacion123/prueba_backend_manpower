@@ -6,4 +6,4 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"Hola": "Mundito"}
+    assert response.json() == {"Hola": "Bienvenid@s a la API para gestionar la pequeña biblioteca"}
